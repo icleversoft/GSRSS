@@ -82,16 +82,16 @@
 }
 #pragma mark -
 - (void) setValue:(id)value forAttribute:(NSString *)attr{
-    id val = [_rssDictionary objectForKey:attr];
+    id val = [_rssDictionary objectForKey:[attr parentElementName]];
     if (val == nil) {
-         [self.rssDictionary setObject:value forKey:attr];
+         [self.rssDictionary setObject:value forKey:[attr parentElementName]];
     }else{
         if ([val isKindOfClass:[NSArray class]]) {
             NSMutableArray *mx = [[NSMutableArray alloc] initWithArray:(NSArray *)val];
             [mx addObject:value];
-            [self.rssDictionary setObject:mx forKey:attr];
+            [self.rssDictionary setObject:mx forKey:[attr parentElementName]];
         }else{
-            [self.rssDictionary setObject:@[val, value] forKey:attr];
+            [self.rssDictionary setObject:@[val, value] forKey:[attr parentElementName]];
         }
     }
 }

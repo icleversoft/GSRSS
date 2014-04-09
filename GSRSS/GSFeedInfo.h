@@ -16,7 +16,7 @@
                           @"itunes:subtitle", @"managingEditor", @"*category"]
 
 #define ATOM_INFO_ITEMS  @[@"title", @"subtitle", @"link@href", @"id", @"updated", \
-                          @"generator"]
+                          @"generator", @"*category@term"]
 
 @interface GSFeedInfo : GSRSSPrimitive
 

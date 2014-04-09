@@ -8,6 +8,7 @@
 
 #import "GSViewController.h"
 #import "GSRSSParser.h"
+#import "GSFeedItem.h"
 
 @interface GSViewController ()<GSRSSParserDelegate>
 
@@ -25,7 +26,7 @@
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://antinews.gr/feed/"] delegate:self];
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://feeds.feedburner.com/blogspot/hyMBI"] delegate:self];
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://resaltomag.blogspot.gr/rss.xml"] delegate:self];
-    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://feeds.feedburner.com/blogspot/nJOIs"] delegate:self];
+    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://kavvathas.com/feed/"] delegate:self];//WP Blog
 
     [_parser parse];
 }
@@ -41,7 +42,7 @@
     
 }
 - (void) parser:(GSRSSParser *)parser parsedFeedItem:(GSFeedItem *)item{
-    
+    NSLog(@"%@", [item properties]);
 }
 - (void) parserDidFinish:(GSRSSParser *)parser{
     
