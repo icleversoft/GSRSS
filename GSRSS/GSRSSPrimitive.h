@@ -22,4 +22,5 @@ typedef enum {ftRSS, ftATOM} GSFeedType;
 - (id) valueFromKey:(NSString *)key andElement:(TBXMLElement *)elm;
 - (void) setElement:(TBXMLElement *)elm forKey:(NSString *)key;
 - (void) setValue:(id)value forAttribute:(NSString *)attr;
+- (NSArray *)properties;
 @end

@@ -113,4 +113,7 @@
         }
     }
 }
+- (NSArray *)properties{
+    return [self.rssDictionary allKeys];
+}
 @end

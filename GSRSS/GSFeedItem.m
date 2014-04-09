@@ -21,7 +21,6 @@
 }
 - (void) processItem:(TBXMLElement *)elm forKeys:(NSArray *)keys{
     for (NSString *attr in keys) {
-        NSLog(@"--->%@", attr);
         if ([attr isMultiple]) {
             NSString *realKey = [attr substringFromIndex:1];
             NSString *rxx = [realKey parentElementName];

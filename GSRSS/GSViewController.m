@@ -26,9 +26,6 @@
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://feeds.feedburner.com/blogspot/hyMBI"] delegate:self];
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://resaltomag.blogspot.gr/rss.xml"] delegate:self];
     _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://feeds.feedburner.com/blogspot/nJOIs"] delegate:self];
-    
-    
-    
 
     [_parser parse];
 }
@@ -37,6 +34,20 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark GSRSSParserDelegate properties -
+- (void) parser:(GSRSSParser *)parser parsedFeedInfo:(GSFeedInfo *)info{
+    
+}
+- (void) parser:(GSRSSParser *)parser parsedFeedItem:(GSFeedItem *)item{
+    
+}
+- (void) parserDidFinish:(GSRSSParser *)parser{
+    
+}
+- (void) parser:(GSRSSParser *)parser didFailWithError:(NSError *)error{
+    
 }
 
 @end
