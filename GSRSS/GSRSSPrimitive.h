@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "TBXML.h"
+#import "NSDate+InternetDateTime.h"
+#import "NSDate+TimeAgo.h"
+
 @interface NSString (RSSAttributes)
 - (BOOL) isMultiple;
 - (NSString *)parentElementName;
@@ -23,4 +26,6 @@ typedef enum {ftRSS, ftATOM} GSFeedType;
 - (void) setElement:(TBXMLElement *)elm forKey:(NSString *)key;
 - (void) setValue:(id)value forAttribute:(NSString *)attr;
 - (NSArray *)properties;
+- (id) valueForKey:(NSString *)key;
+
 @end

@@ -116,4 +116,11 @@
 - (NSArray *)properties{
     return [self.rssDictionary allKeys];
 }
+- (id) valueForKey:(NSString *)key{
+    if ([self.properties containsObject:key]) {
+        return [self.rssDictionary objectForKey:key];
+    }
+    return nil;
+}
+
 @end

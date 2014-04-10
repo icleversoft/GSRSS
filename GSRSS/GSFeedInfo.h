@@ -13,7 +13,7 @@
                           @"managingEditor"@"sy:updatePeriod", @"sy:updateFrequency", @"generator", \
                           @"openSearch:totalResults", @"openSearch:startIndex", @"openSearch:itemsPerPage",\
                           @"atom:id", @"image|url", @"itunes:owner|itunes:email", @"itunes:explicit", \
-                          @"itunes:subtitle", @"managingEditor", @"*category"]
+                          @"itunes:subtitle", @"managingEditor", @"*category", @"copyright"]
 
 #define ATOM_INFO_ITEMS  @[@"title", @"subtitle", @"link@href", @"id", @"updated", \
                           @"generator", @"*category@term"]

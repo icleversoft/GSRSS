@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		582DCA5918F733AF0051956F /* NSDateTimeAgo.strings in Resources */ = {isa = PBXBuildFile; fileRef = 582DCA4A18F733AF0051956F /* NSDateTimeAgo.strings */; };
+		582DCA5A18F733AF0051956F /* NSDate+TimeAgo.m in Sources */ = {isa = PBXBuildFile; fileRef = 582DCA5818F733AF0051956F /* NSDate+TimeAgo.m */; };
 		584F2BC818F491EA00FE66C9 /* GSRSSPrimitive.m in Sources */ = {isa = PBXBuildFile; fileRef = 584F2BC718F491EA00FE66C9 /* GSRSSPrimitive.m */; };
 		5872C00A18F33B5B004693B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5872C00918F33B5B004693B5 /* Foundation.framework */; };
 		5872C00C18F33B5B004693B5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5872C00B18F33B5B004693B5 /* CoreGraphics.framework */; };
@@ -46,6 +48,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		582DCA4B18F733AF0051956F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/NSDateTimeAgo.strings; sourceTree = "<group>"; };
+		582DCA4C18F733AF0051956F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/NSDateTimeAgo.strings; sourceTree = "<group>"; };
+		582DCA4D18F733AF0051956F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/NSDateTimeAgo.strings; sourceTree = "<group>"; };
+		582DCA4E18F733AF0051956F /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/NSDateTimeAgo.strings; sourceTree = "<group>"; };
+		582DCA4F18F733AF0051956F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/NSDateTimeAgo.strings; sourceTree = "<group>"; };
+		582DCA5018F733AF0051956F /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/NSDateTimeAgo.strings; sourceTree = "<group>"; };
+		582DCA5118F733AF0051956F /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/NSDateTimeAgo.strings; sourceTree = "<group>"; };
+		582DCA5218F733AF0051956F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/NSDateTimeAgo.strings; sourceTree = "<group>"; };
+		582DCA5318F733AF0051956F /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/NSDateTimeAgo.strings; sourceTree = "<group>"; };
+		582DCA5418F733AF0051956F /* pt_BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt_BR; path = pt_BR.lproj/NSDateTimeAgo.strings; sourceTree = "<group>"; };
+		582DCA5518F733AF0051956F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/NSDateTimeAgo.strings; sourceTree = "<group>"; };
+		582DCA5618F733AF0051956F /* zh_Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_Hans; path = zh_Hans.lproj/NSDateTimeAgo.strings; sourceTree = "<group>"; };
+		582DCA5718F733AF0051956F /* NSDate+TimeAgo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TimeAgo.h"; sourceTree = "<group>"; };
+		582DCA5818F733AF0051956F /* NSDate+TimeAgo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TimeAgo.m"; sourceTree = "<group>"; };
 		584F2BC618F491EA00FE66C9 /* GSRSSPrimitive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSRSSPrimitive.h; sourceTree = "<group>"; };
 		584F2BC718F491EA00FE66C9 /* GSRSSPrimitive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSRSSPrimitive.m; sourceTree = "<group>"; };
 		5872C00618F33B5B004693B5 /* GSRSS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GSRSS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +131,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		582DCA4918F733AF0051956F /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				582DCA4A18F733AF0051956F /* NSDateTimeAgo.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		5872BFFD18F33B5B004693B5 = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +247,9 @@
 		58F6461418F5C1BB00650BC8 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				582DCA4918F733AF0051956F /* Localization */,
+				582DCA5718F733AF0051956F /* NSDate+TimeAgo.h */,
+				582DCA5818F733AF0051956F /* NSDate+TimeAgo.m */,
 				58F6461518F5C1BB00650BC8 /* GTMNSString+HTML.h */,
 				58F6461618F5C1BB00650BC8 /* GTMNSString+HTML.m */,
 				58F6461718F5C1BB00650BC8 /* NSDate+InternetDateTime.h */,
@@ -295,6 +322,17 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
+				es,
+				fi,
+				fr,
+				hu,
+				it,
+				ja,
+				nl,
+				pt_BR,
+				ru,
+				zh_Hans,
 			);
 			mainGroup = 5872BFFD18F33B5B004693B5;
 			productRefGroup = 5872C00718F33B5B004693B5 /* Products */;
@@ -314,6 +352,7 @@
 			files = (
 				5872C02218F33B5B004693B5 /* Images.xcassets in Resources */,
 				5872C01418F33B5B004693B5 /* InfoPlist.strings in Resources */,
+				582DCA5918F733AF0051956F /* NSDateTimeAgo.strings in Resources */,
 				5872C01D18F33B5B004693B5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +377,7 @@
 				5872C01A18F33B5B004693B5 /* GSAppDelegate.m in Sources */,
 				5872C02018F33B5B004693B5 /* GSViewController.m in Sources */,
 				584F2BC818F491EA00FE66C9 /* GSRSSPrimitive.m in Sources */,
+				582DCA5A18F733AF0051956F /* NSDate+TimeAgo.m in Sources */,
 				58F6461E18F5C1BB00650BC8 /* NSDate+InternetDateTime.m in Sources */,
 				58F6461F18F5C1BB00650BC8 /* NSString+HTML.m in Sources */,
 				58F6461D18F5C1BB00650BC8 /* GTMNSString+HTML.m in Sources */,
@@ -369,6 +409,25 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		582DCA4A18F733AF0051956F /* NSDateTimeAgo.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				582DCA4B18F733AF0051956F /* de */,
+				582DCA4C18F733AF0051956F /* en */,
+				582DCA4D18F733AF0051956F /* es */,
+				582DCA4E18F733AF0051956F /* fi */,
+				582DCA4F18F733AF0051956F /* fr */,
+				582DCA5018F733AF0051956F /* hu */,
+				582DCA5118F733AF0051956F /* it */,
+				582DCA5218F733AF0051956F /* ja */,
+				582DCA5318F733AF0051956F /* nl */,
+				582DCA5418F733AF0051956F /* pt_BR */,
+				582DCA5518F733AF0051956F /* ru */,
+				582DCA5618F733AF0051956F /* zh_Hans */,
+			);
+			name = NSDateTimeAgo.strings;
+			sourceTree = "<group>";
+		};
 		5872C01218F33B5B004693B5 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
