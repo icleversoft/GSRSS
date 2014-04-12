@@ -12,7 +12,7 @@
 
 #define RSS_ITEM_KEYS  @[@"title", @"link", @"comments", @"pubDate", @"dc:creator", @"*category", \
                          @"guid", @"description", @"content:encoded", @"wfw:commentRss", \
-                         @"*media:content@url", @"media:thumbnail@url", @"feedburner:origLink", @"author", \
+                         @"*media:content@url", @"*media:thumbnail@url", @"feedburner:origLink", @"author", \
                          @"atom:summary"]
 
 #define ATOM_ITEM_KEYS  @[@"title", @"*link@href", @"published", @"updated", @"id", \

@@ -8,6 +8,8 @@
 
 #import "GSRSSPrimitive.h"
 #import "NSString+HTML.h"
+#import "GSLinkItem.h"
+
 @implementation NSString (RSSAttributes)
 - (BOOL) isMultiple{
     return [self hasPrefix:@"*"];
@@ -44,7 +46,8 @@
 - (id) simpleValueFromKey:(NSString *)key andElement:(TBXMLElement *)elm{
     NSArray *elements = [key componentsSeparatedByString:@"@"];
     if ([elements count] > 1) {
-        return [TBXML valueOfAttributeNamed:[elements objectAtIndex:1] forElement:elm];
+        return [[GSLinkItem alloc] initWithItem:elm];
+//        return [TBXML valueOfAttributeNamed:[elements objectAtIndex:1] forElement:elm];
     }
     return [TBXML textForElement:elm];
 }
@@ -65,7 +68,9 @@
         elements = [key componentsSeparatedByString:@"@"];
         e = [TBXML childElementNamed:[elements objectAtIndex:0] parentElement:elm];
         if (e != nil) {
-            return @[[elements objectAtIndex:0], [TBXML valueOfAttributeNamed:[elements objectAtIndex:1] forElement:e] ];
+            return [[GSLinkItem alloc] initWithItem:e];
+//            GSLinkItem *link = [[GSLinkItem alloc] initWithItem:e];
+//            return @[[elements objectAtIndex:0], [TBXML valueOfAttributeNamed:[elements objectAtIndex:1] forElement:e] ];
         }
     }else{
         for (NSString *subKey in elements) {
@@ -96,6 +101,7 @@
     }
 }
 - (void) setElement:(TBXMLElement *)elm forKey:(NSString *)key{
+    NSLog(@"%@", key);
     id val = nil;
     if ([key isMultiple]) {
         key = [key substringFromIndex:1];
@@ -107,7 +113,10 @@
         if ([val isKindOfClass:[NSString class]]) {
             
             [self setValue:[val stringByConvertingHTMLToPlainText] forAttribute:key];
-        }else{
+        }else if ([val isKindOfClass:[GSLinkItem class]]){
+            [self setValue:val forAttribute:key];
+        }
+        else{
             NSArray *arrVal = (NSArray *)val;
             [self setValue:[arrVal objectAtIndex:1] forAttribute:[arrVal objectAtIndex:0]];
         }
