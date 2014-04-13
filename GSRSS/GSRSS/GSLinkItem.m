@@ -23,6 +23,19 @@
         }else if ([[_attributes allKeys] containsObject:@"medium"] && [[_attributes objectForKey:@"medium"] hasPrefix:@"image"]){
             _type = ltImage;
         }
+        if ( _type != ltImage) {
+            if ([[_attributes allKeys] containsObject:@"url"]) {
+                NSString *val = [self valueForKey:@"url"];
+                if ([val hasSuffix:@".jpg"] || [val hasSuffix:@".JPG"] || [val hasSuffix:@".png"] || [val hasSuffix:@".PNG"]) {
+                    _type = ltImage;
+                }
+            }
+        }else if ([[_attributes allKeys] containsObject:@"href"]){
+            NSString *val = [self valueForKey:@"href"];
+            if ([val hasSuffix:@".jpg"] || [val hasSuffix:@".JPG"] || [val hasSuffix:@".png"] || [val hasSuffix:@".PNG"]) {
+                _type = ltImage;
+            }
+        }
     }
     return self;
 }

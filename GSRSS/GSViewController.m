@@ -31,10 +31,10 @@
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://kourdistoportocali.com/feeds/xml/category-newsdesk.xml"] delegate:self];
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://antinews.gr/feed/"] delegate:self];
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://feeds.feedburner.com/blogspot/hyMBI"] delegate:self];
-//    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://resaltomag.blogspot.gr/rss.xml"] delegate:self];
+    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://resaltomag.blogspot.gr/rss.xml"] delegate:self];
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://feeds.feedburner.com/assoscoupa"] delegate:self];//WP Blog
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://www.newsit.gr/rss/artrss.php"] delegate:self];//WP Blog
-    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://www.enikos.gr/feeds/content_latest.xml"] delegate:self];//WP Blog
+//    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://www.enikos.gr/feeds/content_latest.xml"] delegate:self];//WP Blog
 
     [_parser parse];
 }
@@ -51,8 +51,10 @@
 }
 - (void) parser:(GSRSSParser *)parser parsedFeedItem:(GSFeedItem *)item{
     GSBriefFeedItem *brief = [[GSBriefFeedItem alloc] initWithFeedItem:item];
-    
+
     NSLog(@"%@", [item properties]);
+    
+/*
     NSLog(@"%@", [item valueForKey:@"link"]);
     if ([item valueForKey:@"link"]) {
         if ([[item valueForKey:@"link"] isKindOfClass:[NSArray class]]) {
@@ -96,14 +98,17 @@
         _data = [_data stringByAppendingString:article];
         NSLog(@"%@", article);
     }
+*/
 }
 - (void) parserDidFinish:(GSRSSParser *)parser{
+/*
     dispatch_sync(dispatch_get_main_queue(), ^{
         MarkupParser* p = [[MarkupParser alloc] init];
         NSAttributedString* attString = [p attrStringFromMarkup: _data];
         [_mv setAttString:attString withImages: p.images];
         [_mv buildFrames];
     });
+*/
 }
 - (void) parser:(GSRSSParser *)parser didFailWithError:(NSError *)error{
     

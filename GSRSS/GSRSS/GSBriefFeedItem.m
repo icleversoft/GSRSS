@@ -45,6 +45,9 @@
 
             //Description
             val = [item valueForKey:@"description"];
+            if (val == nil) {
+                val = [item valueForKey:@"atom:summary"];
+            }
             if (val != nil) {
                 _description = (NSString *)val;
             }
@@ -67,6 +70,9 @@
             //Image
             imageURL = [self getImageURLFromItem:item andKey:@"media:content"];
 
+            if (imageURL == nil) {
+                imageURL = [self getImageURLFromItem:item andKey:@"media:thumbnail"];
+            }
             //If no image found, try to find any image from item content / description
             if (imageURL == nil) {
                 imageURL = [self getImageURLFromDescriptionOrItem:item andKeys:@[@"description", @"content:encoded"]];
