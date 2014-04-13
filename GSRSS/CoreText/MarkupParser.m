@@ -23,7 +23,7 @@ static CGFloat widthCallback( void* ref ){
 {
     self = [super init];
     if (self) {
-        self.font = @"Arial";
+        self.font = @"ArialMT";
         self.color = [UIColor blackColor];
         self.strokeColor = [UIColor whiteColor];
         self.strokeWidth = 0.0;
@@ -50,7 +50,7 @@ static CGFloat widthCallback( void* ref ){
                           componentsSeparatedByString:@"<"]; //1
         
         CTFontRef fontRef = CTFontCreateWithName((CFStringRef)self.font,
-                                                 24.0f, NULL);
+                                                 12.0f, NULL);
         
         //apply the current text style //2
         NSDictionary* attrs = [NSDictionary dictionaryWithObjectsAndKeys:

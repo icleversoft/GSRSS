@@ -20,6 +20,8 @@
         }];
         if ([[_attributes allKeys] containsObject:@"type"] && [[_attributes objectForKey:@"type"] hasPrefix:@"image"]) {
             _type = ltImage;
+        }else if ([[_attributes allKeys] containsObject:@"medium"] && [[_attributes objectForKey:@"medium"] hasPrefix:@"image"]){
+            _type = ltImage;
         }
     }
     return self;

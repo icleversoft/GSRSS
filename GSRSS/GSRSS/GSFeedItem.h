@@ -21,4 +21,5 @@
 
 @interface GSFeedItem : GSRSSPrimitive
 - (id) initWithElement:(TBXMLElement *)elm andType:(GSFeedType)fieldType;
+@property (nonatomic, readonly) GSFeedType type;
 @end

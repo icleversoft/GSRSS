@@ -28,10 +28,16 @@
 
 - (void)buildFrames
 {
+    while ([self.subviews count] > 0) {
+        [[self.subviews objectAtIndex:0] removeFromSuperview];
+    }
     frameXOffset = 20; //1
     frameYOffset = 20;
     self.pagingEnabled = YES;
     self.delegate = self;
+    self.scrollEnabled = YES;
+    self.showsVerticalScrollIndicator = NO;
+    self.showsHorizontalScrollIndicator = NO;
     self.frames = [NSMutableArray array];
     
     CGMutablePathRef path = CGPathCreateMutable(); //2
@@ -77,6 +83,7 @@
     //set the total width of the scroll view
     int totalPages = (columnIndex+1) / 2; //7
     self.contentSize = CGSizeMake(totalPages*self.bounds.size.width, textFrame.size.height);
+    NSLog(@"%@",  NSStringFromCGSize(self.contentSize)  );
 }
 
 -(void)setAttString:(NSAttributedString *)string withImages:(NSArray*)imgs
@@ -88,6 +95,9 @@
 -(void)attachImagesWithFrame:(CTFrameRef)f inColumnView:(CTColumnView*)col
 {
     //drawing images
+    if ([self.images count] == 0) {
+        return;
+    }
     NSArray *lines = (NSArray *)CTFrameGetLines(f); //1
     
     CGPoint origins[[lines count]];
@@ -126,7 +136,11 @@
 	            runBounds.origin.y = origins[lineIndex].y + self.frame.origin.y + frameYOffset;
 	            runBounds.origin.y -= descent;
                 
-                UIImage *img = [UIImage imageNamed: [nextImage objectForKey:@"fileName"] ];
+                NSData *rawimg = [NSData dataWithContentsOfURL:[NSURL URLWithString:[nextImage objectForKey:@"fileName"]]];
+                UIImage *img = [UIImage imageWithData:rawimg];
+
+//                UIImage *img = [UIImage imageWithContentsOfURL:[NSURL URLWithString:[nextImage objectForKey:@"fileName"]] ];
+//                UIImage *img = [UIImage imageNamed: [nextImage objectForKey:@"fileName"] ];
                 CGPathRef pathRef = CTFrameGetPath(f); //10
                 CGRect colRect = CGPathGetBoundingBox(pathRef);
                 

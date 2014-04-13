@@ -15,6 +15,7 @@
 @implementation GSFeedItem
 - (id) initWithElement:(TBXMLElement *)elm andType:(GSFeedType)fieldType{
     if (self = [super initWithElement:elm]) {
+        _type = fieldType;
         [self processItem:elm forKeys:fieldType == ftATOM ? ATOM_ITEM_KEYS : RSS_ITEM_KEYS];
     }
     return self;
