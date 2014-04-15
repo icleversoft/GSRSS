@@ -11,6 +11,7 @@
 #import "GSFeedItem.h"
 #import "GSLinkItem.h"
 #import "GSBriefFeedItem.h"
+#import "GSFullFeedItem.h"
 
 #import "CTView.h"
 #import "MarkupParser.h"
@@ -31,10 +32,15 @@
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://kourdistoportocali.com/feeds/xml/category-newsdesk.xml"] delegate:self];
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://antinews.gr/feed/"] delegate:self];
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://feeds.feedburner.com/blogspot/hyMBI"] delegate:self];
-    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://resaltomag.blogspot.gr/rss.xml"] delegate:self];
+//    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://resaltomag.blogspot.gr/rss.xml"] delegate:self];
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://feeds.feedburner.com/assoscoupa"] delegate:self];//WP Blog
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://www.newsit.gr/rss/artrss.php"] delegate:self];//WP Blog
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://www.enikos.gr/feeds/content_latest.xml"] delegate:self];//WP Blog
+//    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://www.zougla.gr/rss/ola"] delegate:self];//WP Blog
+    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://www.gazzetta.gr/rssfeeds/allnewsfeed"] delegate:self];//WP Blog
+    
+    
+    
 
     [_parser parse];
 }
@@ -50,8 +56,8 @@
     _data = @"";
 }
 - (void) parser:(GSRSSParser *)parser parsedFeedItem:(GSFeedItem *)item{
-    GSBriefFeedItem *brief = [[GSBriefFeedItem alloc] initWithFeedItem:item];
-
+    GSFullFeedItem *brief = [[GSFullFeedItem alloc] initWithFeedItem:item];
+    NSLog(@"%@", brief.title);
     NSLog(@"%@", [item properties]);
     
 /*

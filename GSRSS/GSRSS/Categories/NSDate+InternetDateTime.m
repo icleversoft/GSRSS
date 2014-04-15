@@ -131,6 +131,10 @@ static NSDateFormatter *_internetDateTimeFormatter = nil;
                 [dateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss"]; 
                 date = [dateFormatter dateFromString:RFC3339String];
             }
+            if (!date) { // 1937-01-01 12:00:27
+                [dateFormatter setDateFormat:@"yyyy'-'MM'-'dd' 'HH':'mm':'ss"];
+                date = [dateFormatter dateFromString:RFC3339String];
+            }
             if (!date) NSLog(@"Could not parse RFC3339 date: \"%@\" Possible invalid format.", dateString);
             
         }

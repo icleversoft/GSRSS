@@ -112,7 +112,7 @@
     if (val != nil) {
         if ([val isKindOfClass:[NSString class]]) {
             
-            [self setValue:[val stringByConvertingHTMLToPlainText] forAttribute:key];
+            [self setValue:val forAttribute:key];
         }else if ([val isKindOfClass:[GSLinkItem class]]){
             [self setValue:val forAttribute:key];
         }

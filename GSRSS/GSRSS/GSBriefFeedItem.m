@@ -8,7 +8,7 @@
 
 #import "GSBriefFeedItem.h"
 #import "GSLinkItem.h"
-
+#import "NSString+HTML.h"
 #import "TFHpple.h"
 /*
  #define RSS_ITEM_KEYS  @[@"title", @"link", @"comments", @"pubDate", @"dc:creator", @"*category", \
@@ -40,6 +40,9 @@
             val = [item valueForKey:@"pubDate"];
             if (val != nil) {
                 NSDate *date = [NSDate dateFromInternetDateTimeString:(NSString *)val formatHint:DateFormatHintRFC822];
+                if (date == nil) {
+                    date = [NSDate dateFromRFC3339String:(NSString *)val];
+                }
                 _timeAgo = [date timeAgo];
             }
 
@@ -119,6 +122,7 @@
             }
         }
         _image = imageURL;
+        _description = [_description stringByConvertingHTMLToPlainText];
         if ([_description length] > 150) {
             _description = [NSString stringWithFormat:@"%@...", [_description substringToIndex:149]];
         }

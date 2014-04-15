@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5805194018FDB2F200E816AC /* GSFullFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805193F18FDB2F200E816AC /* GSFullFeedItem.m */; };
 		582DCA6218F7377B0051956F /* CTColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 582DCA5D18F7377B0051956F /* CTColumnView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		582DCA6318F7377B0051956F /* CTView.m in Sources */ = {isa = PBXBuildFile; fileRef = 582DCA5F18F7377B0051956F /* CTView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		582DCA6418F7377B0051956F /* MarkupParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 582DCA6118F7377B0051956F /* MarkupParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -58,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5805193E18FDB2F200E816AC /* GSFullFeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSFullFeedItem.h; sourceTree = "<group>"; };
+		5805193F18FDB2F200E816AC /* GSFullFeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSFullFeedItem.m; sourceTree = "<group>"; };
 		582DCA5C18F7377B0051956F /* CTColumnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTColumnView.h; sourceTree = "<group>"; };
 		582DCA5D18F7377B0051956F /* CTColumnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTColumnView.m; sourceTree = "<group>"; };
 		582DCA5E18F7377B0051956F /* CTView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTView.h; sourceTree = "<group>"; };
@@ -283,6 +286,8 @@
 				5879473418F9CD2700D0A723 /* TBXML */,
 				58610BCB18FAEB31007F410E /* GSBriefFeedItem.h */,
 				58610BCC18FAEB31007F410E /* GSBriefFeedItem.m */,
+				5805193E18FDB2F200E816AC /* GSFullFeedItem.h */,
+				5805193F18FDB2F200E816AC /* GSFullFeedItem.m */,
 			);
 			path = GSRSS;
 			sourceTree = "<group>";
@@ -439,6 +444,7 @@
 				582DCA6418F7377B0051956F /* MarkupParser.m in Sources */,
 				5879474318F9CD2700D0A723 /* GSRSSParser.m in Sources */,
 				58610C4518FB21F2007F410E /* XPathQuery.m in Sources */,
+				5805194018FDB2F200E816AC /* GSFullFeedItem.m in Sources */,
 				5879474518F9CD2700D0A723 /* TBXML+Compression.m in Sources */,
 				582DCA6318F7377B0051956F /* CTView.m in Sources */,
 				5879473F18F9CD2700D0A723 /* NSString+HTML.m in Sources */,
