@@ -40,10 +40,9 @@
             val = [item valueForKey:@"pubDate"];
             if (val != nil) {
                 NSDate *date = [NSDate dateFromInternetDateTimeString:(NSString *)val formatHint:DateFormatHintRFC822];
-                if (date == nil) {
-                    date = [NSDate dateFromRFC3339String:(NSString *)val];
+                if (date != nil) {
+                    _timeAgo = [date timeAgo];
                 }
-                _timeAgo = [date timeAgo];
             }
 
             //Description
