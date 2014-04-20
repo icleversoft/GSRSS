@@ -10,10 +10,10 @@
 #import "GSFeedItem.h"
 @interface GSBriefFeedItem : NSObject
 - (id) initWithFeedItem:(GSFeedItem *)item;
-@property (nonatomic, strong, readonly) NSString *image;
-@property (nonatomic, strong, readonly) NSString *title;
-@property (nonatomic, strong, readonly) NSString *description;
-@property (nonatomic, strong, readonly) NSString *author;
-@property (nonatomic, strong, readonly) NSString *timeAgo;
-@property (nonatomic, strong, readonly) NSString *fullLink;
+@property (nonatomic, strong) NSString *image;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSString *author;
+@property (nonatomic, strong) NSString *timeAgo;
+@property (nonatomic, strong) NSString *fullLink;
 @end

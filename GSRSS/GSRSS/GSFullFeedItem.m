@@ -9,8 +9,8 @@
 #import "GSFullFeedItem.h"
 
 @implementation GSFullFeedItem
-@synthesize image = _image, title = _title, description = _description, author = _author, timeAgo = _timeAgo;
-@synthesize fullLink = _fullLink;
+//@synthesize image = _image, title = _title, description = _description, author = _author, timeAgo = _timeAgo;
+//@synthesize fullLink = _fullLink;
 
 - (id) initWithFeedItem:(GSFeedItem *)item{
     if (self = [super initWithFeedItem:item]) {
@@ -21,7 +21,7 @@
             val = [item valueForKey:@"atom:summary"];
         }
         if (val != nil) {
-            _description = (NSString *)val;
+            self.description = (NSString *)val;
         }
 
     }

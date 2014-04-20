@@ -10,10 +10,10 @@
 
 @interface GSFullFeedItem : GSBriefFeedItem
 - (id) initWithFeedItem:(GSFeedItem *)item;
-@property (nonatomic, strong, readonly) NSString *image;
-@property (nonatomic, strong, readonly) NSString *title;
-@property (nonatomic, strong, readonly) NSString *description;
-@property (nonatomic, strong, readonly) NSString *author;
-@property (nonatomic, strong, readonly) NSString *timeAgo;
-@property (nonatomic, strong, readonly) NSString *fullLink;
+//@property (nonatomic, strong, readonly) NSString *image;
+//@property (nonatomic, strong, readonly) NSString *title;
+//@property (nonatomic, strong, readonly) NSString *description;
+//@property (nonatomic, strong, readonly) NSString *author;
+//@property (nonatomic, strong, readonly) NSString *timeAgo;
+//@property (nonatomic, strong, readonly) NSString *fullLink;
 @end
