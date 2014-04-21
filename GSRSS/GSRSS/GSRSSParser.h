@@ -14,6 +14,7 @@
 @protocol GSRSSParserDelegate <NSObject>
 
 @optional
+- (void) willStartParser:(GSRSSParser *)parser;
 - (void) parser:(GSRSSParser *)parser parsedFeedInfo:(GSFeedInfo *)info;
 - (void) parser:(GSRSSParser *)parser parsedFeedItem:(GSFeedItem *)item;
 - (void) parserDidFinish:(GSRSSParser *)parser;

@@ -24,10 +24,12 @@
     }
     return self;
 }
-
 - (void) parse{
     dispatch_queue_t kBgQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0ul);
     dispatch_async(kBgQueue, ^{
+        if (_delegate && [_delegate respondsToSelector:@selector(willStartParser:)]) {
+            [_delegate willStartParser:self];
+        }
         NSData* data = [NSData dataWithContentsOfURL:_url];
         NSError *error = nil;
         NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];

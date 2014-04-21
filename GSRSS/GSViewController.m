@@ -34,10 +34,10 @@
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://feeds.feedburner.com/blogspot/hyMBI"] delegate:self];
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://resaltomag.blogspot.gr/rss.xml"] delegate:self];
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://feeds.feedburner.com/assoscoupa"] delegate:self];//WP Blog
-//    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://www.newsit.gr/rss/artrss.php"] delegate:self];//WP Blog
+    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://www.newsit.gr/rss/artrss.php"] delegate:self];//WP Blog
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://www.enikos.gr/feeds/content_latest.xml"] delegate:self];//WP Blog
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://www.zougla.gr/rss/ola"] delegate:self];//WP Blog
-    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://www.gazzetta.gr/rssfeeds/allnewsfeed"] delegate:self];//WP Blog
+//    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://www.gazzetta.gr/rssfeeds/allnewsfeed"] delegate:self];//WP Blog
     
     
     
@@ -52,6 +52,9 @@
 }
 
 #pragma mark GSRSSParserDelegate properties -
+- (void) willStartParser:(GSRSSParser *)parser{
+    
+}
 - (void) parser:(GSRSSParser *)parser parsedFeedInfo:(GSFeedInfo *)info{
     _data = @"";
 }

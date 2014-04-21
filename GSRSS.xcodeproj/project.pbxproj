@@ -46,6 +46,12 @@
 		5879474618F9CD2700D0A723 /* TBXML+HTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 5879473818F9CD2700D0A723 /* TBXML+HTTP.m */; };
 		5879474718F9CD2700D0A723 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 5879473A18F9CD2700D0A723 /* TBXML.m */; };
 		5879474D18F9DEF300D0A723 /* GSLinkItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5879474C18F9DEF300D0A723 /* GSLinkItem.m */; };
+		58C2B7D11905BDBA00237B19 /* TestFeedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2B7D01905BDBA00237B19 /* TestFeedController.m */; };
+		58C2B7D51905C3ED00237B19 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2B7D41905C3ED00237B19 /* SVProgressHUD.m */; };
+		58C2B7D91905C9B000237B19 /* angle-mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C2B7D61905C9B000237B19 /* angle-mask@2x.png */; };
+		58C2B7DA1905C9B000237B19 /* error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C2B7D71905C9B000237B19 /* error@2x.png */; };
+		58C2B7DB1905C9B000237B19 /* success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C2B7D81905C9B000237B19 /* success@2x.png */; };
+		58C2B7DD1905C9E200237B19 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C2B7DC1905C9E200237B19 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +141,14 @@
 		5879473A18F9CD2700D0A723 /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXML.m; sourceTree = "<group>"; };
 		5879474B18F9DEF300D0A723 /* GSLinkItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSLinkItem.h; sourceTree = "<group>"; };
 		5879474C18F9DEF300D0A723 /* GSLinkItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSLinkItem.m; sourceTree = "<group>"; };
+		58C2B7CF1905BDBA00237B19 /* TestFeedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFeedController.h; sourceTree = "<group>"; };
+		58C2B7D01905BDBA00237B19 /* TestFeedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestFeedController.m; sourceTree = "<group>"; };
+		58C2B7D31905C3ED00237B19 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		58C2B7D41905C3ED00237B19 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		58C2B7D61905C9B000237B19 /* angle-mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "angle-mask@2x.png"; sourceTree = "<group>"; };
+		58C2B7D71905C9B000237B19 /* error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "error@2x.png"; sourceTree = "<group>"; };
+		58C2B7D81905C9B000237B19 /* success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "success@2x.png"; sourceTree = "<group>"; };
+		58C2B7DC1905C9E200237B19 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58C2B7DD1905C9E200237B19 /* QuartzCore.framework in Frameworks */,
 				58610C4718FB221F007F410E /* libxml2.2.dylib in Frameworks */,
 				582DCA6618F738FA0051956F /* CoreText.framework in Frameworks */,
 				5872C04918F33C3D004693B5 /* libz.dylib in Frameworks */,
@@ -212,6 +227,7 @@
 		5872C00818F33B5B004693B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				58C2B7DC1905C9E200237B19 /* QuartzCore.framework */,
 				58610C4618FB221F007F410E /* libxml2.2.dylib */,
 				582DCA6518F738FA0051956F /* CoreText.framework */,
 				5872C04818F33C3D004693B5 /* libz.dylib */,
@@ -226,6 +242,7 @@
 		5872C00F18F33B5B004693B5 /* GSRSS */ = {
 			isa = PBXGroup;
 			children = (
+				58C2B7D21905C3C700237B19 /* Progress */,
 				5879471218F9CD2700D0A723 /* GSRSS */,
 				582DCA5B18F7377B0051956F /* CoreText */,
 				5872C01818F33B5B004693B5 /* GSAppDelegate.h */,
@@ -235,6 +252,8 @@
 				5872C01F18F33B5B004693B5 /* GSViewController.m */,
 				5872C02118F33B5B004693B5 /* Images.xcassets */,
 				5872C01018F33B5B004693B5 /* Supporting Files */,
+				58C2B7CF1905BDBA00237B19 /* TestFeedController.h */,
+				58C2B7D01905BDBA00237B19 /* TestFeedController.m */,
 			);
 			path = GSRSS;
 			sourceTree = "<group>";
@@ -331,6 +350,18 @@
 			path = TBXML;
 			sourceTree = "<group>";
 		};
+		58C2B7D21905C3C700237B19 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				58C2B7D61905C9B000237B19 /* angle-mask@2x.png */,
+				58C2B7D71905C9B000237B19 /* error@2x.png */,
+				58C2B7D81905C9B000237B19 /* success@2x.png */,
+				58C2B7D31905C3ED00237B19 /* SVProgressHUD.h */,
+				58C2B7D41905C3ED00237B19 /* SVProgressHUD.m */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -419,8 +450,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58C2B7DB1905C9B000237B19 /* success@2x.png in Resources */,
+				58C2B7D91905C9B000237B19 /* angle-mask@2x.png in Resources */,
 				5872C02218F33B5B004693B5 /* Images.xcassets in Resources */,
 				5872C01418F33B5B004693B5 /* InfoPlist.strings in Resources */,
+				58C2B7DA1905C9B000237B19 /* error@2x.png in Resources */,
 				5879473C18F9CD2700D0A723 /* NSDateTimeAgo.strings in Resources */,
 				5872C01D18F33B5B004693B5 /* Main.storyboard in Resources */,
 			);
@@ -450,6 +484,7 @@
 				5879473F18F9CD2700D0A723 /* NSString+HTML.m in Sources */,
 				5872C01A18F33B5B004693B5 /* GSAppDelegate.m in Sources */,
 				5879474618F9CD2700D0A723 /* TBXML+HTTP.m in Sources */,
+				58C2B7D51905C3ED00237B19 /* SVProgressHUD.m in Sources */,
 				5879474218F9CD2700D0A723 /* GSFeedItem.m in Sources */,
 				5872C02018F33B5B004693B5 /* GSViewController.m in Sources */,
 				5879474718F9CD2700D0A723 /* TBXML.m in Sources */,
@@ -462,6 +497,7 @@
 				582DCA6218F7377B0051956F /* CTColumnView.m in Sources */,
 				5879474118F9CD2700D0A723 /* GSFeedInfo.m in Sources */,
 				5872C01618F33B5B004693B5 /* main.m in Sources */,
+				58C2B7D11905BDBA00237B19 /* TestFeedController.m in Sources */,
 				5879474D18F9DEF300D0A723 /* GSLinkItem.m in Sources */,
 				5879474418F9CD2700D0A723 /* GSRSSPrimitive.m in Sources */,
 				5879473B18F9CD2700D0A723 /* GTMNSString+HTML.m in Sources */,
