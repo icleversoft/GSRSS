@@ -23,7 +23,7 @@
  
 @implementation GSBriefFeedItem
 @synthesize image = _image, title = _title, description = _description, author = _author, timeAgo = _timeAgo;
-@synthesize fullLink = _fullLink;
+@synthesize fullLink = _fullLink, date = _date;
 
 - (id) initWithFeedItem:(GSFeedItem *)item{
     if (self = [super init]) {
@@ -39,9 +39,9 @@
             //Publication Date
             val = [item valueForKey:@"pubDate"];
             if (val != nil) {
-                NSDate *date = [NSDate dateFromInternetDateTimeString:(NSString *)val formatHint:DateFormatHintRFC822];
-                if (date != nil) {
-                    _timeAgo = [date timeAgo];
+                _date = [NSDate dateFromInternetDateTimeString:(NSString *)val formatHint:DateFormatHintRFC822];
+                if (_date != nil) {
+                    _timeAgo = [_date timeAgo];
                 }
             }
 

@@ -16,4 +16,5 @@
 @property (nonatomic, strong) NSString *author;
 @property (nonatomic, strong) NSString *timeAgo;
 @property (nonatomic, strong) NSString *fullLink;
+@property (nonatomic, strong) NSDate *date;
 @end
