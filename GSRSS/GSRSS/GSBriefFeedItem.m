@@ -31,7 +31,7 @@
         _description = @"";
         _author = @"";
         _image = @"";
-        _title = [item valueForKey:@"title"];
+        _title = [[item valueForKey:@"title"] stringByConvertingHTMLToPlainText];
         
         id val = nil;
         NSString *imageURL = nil;
