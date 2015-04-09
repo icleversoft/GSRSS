@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TBXML.h"
-typedef enum {ltImage, ltOther} LinkType;
+typedef enum {ltImage, ltOther, ltComments} LinkType;
 @interface GSLinkItem : NSObject
 - (id) initWithItem:(TBXMLElement *)elm;
 @property(nonatomic, readonly) LinkType type;

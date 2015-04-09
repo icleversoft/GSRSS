@@ -17,7 +17,7 @@
 
 #define ATOM_ITEM_KEYS  @[@"title", @"*link@href", @"published", @"updated", @"id", \
                         @"author|name", @"content", @"summary", @"*category@term", \
-                        @"*media:thumbnail@url", @"author|email"]
+                        @"*media:thumbnail@url", @"author|email", @"feedburner:origLink", @"*category", @"comments", @"link@replies"]
 
 @interface GSFeedItem : GSRSSPrimitive
 - (id) initWithElement:(TBXMLElement *)elm andType:(GSFeedType)fieldType;

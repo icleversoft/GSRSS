@@ -55,7 +55,11 @@
 - (void) getFeed{
     [_items removeAllObjects];
     [self.tableView reloadData];
-    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://olympia.gr/feed/"] delegate:self];
+//    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://www.newsit.gr/rss/artrss.php"] delegate:self];
+    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://ksipnistere.blogspot.gr/rss.xml"] delegate:self];//WP Blog
+//    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://www.iokh.gr/rss.xml"] delegate:self];
+//    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://tro-ma-ktiko.blogspot.gr/rss.xml"] delegate:self];
+//    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://olympia.gr/feed/"] delegate:self];
     [_parser parse];
     
 }
@@ -70,6 +74,19 @@
 }
 - (void) parser:(GSRSSParser *)parser parsedFeedItem:(GSFeedItem *)item{
     GSFullFeedItem *fi = [[GSFullFeedItem alloc] initWithFeedItem:item];
+    NSLog(@"----------------------------");
+    NSLog(@"Title.......:%@", fi.title);
+    NSLog(@"Image.......:%@", fi.image == nil ? @"-" : fi.image);
+    NSLog(@"Link........:%@", fi.fullLink);
+    NSLog(@"Time Ago....:%@", fi.timeAgo);
+    if ([fi.author isKindOfClass:[NSString class]]) {
+        NSLog(@"Authors.....:%@", fi.author);
+    }else{
+        NSArray *arr = (NSArray *)fi.author;
+        NSLog(@"Authors.....:%@", [arr componentsJoinedByString:@" / "]);
+    }
+    NSLog(@"Comments....:%@", fi.commentsURL == nil ? @"-" : fi.commentsURL);
+    NSLog(@"Description.:%@", fi.description);
     [_items addObject:fi];
 }
 - (void) parserDidFinish:(GSRSSParser *)parser{

@@ -101,7 +101,7 @@
     }
 }
 - (void) setElement:(TBXMLElement *)elm forKey:(NSString *)key{
-    NSLog(@"%@", key);
+//    NSLog(@"%@", key);
     id val = nil;
     if ([key isMultiple]) {
         key = [key substringFromIndex:1];

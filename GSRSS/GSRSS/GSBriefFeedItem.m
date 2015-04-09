@@ -23,7 +23,7 @@
  
 @implementation GSBriefFeedItem
 @synthesize image = _image, title = _title, description = _description, author = _author, timeAgo = _timeAgo;
-@synthesize fullLink = _fullLink, date = _date;
+@synthesize fullLink = _fullLink, date = _date, commentsURL = _commentsURL;
 
 - (id) initWithFeedItem:(GSFeedItem *)item{
     if (self = [super init]) {
@@ -63,12 +63,19 @@
                 _author = (NSString *)val;
             }
             
+            //CommentsURL
+            val = [item valueForKey:@"wfw:commentRss"];
+            if (val != nil) {
+                _commentsURL = (NSString *)val;
+            }
+
             //FullLink
             val = [item valueForKey:@"link"];
             if (val != nil) {
                 _fullLink = (NSString *)val;
             }
 
+            
             //Image
             imageURL = [self getImageURLFromItem:item andKey:@"media:content"];
 
@@ -106,14 +113,36 @@
                 _author = (NSString *)val;
             }
             
-            //FullLink
-            val = [item valueForKey:@"id"];
-            if (val != nil) {
-                _fullLink = (NSString *)val;
+            //Link
+            if (_fullLink == nil) {
+                val = [item valueForKey:@"feedburner:origLink"];
+                if (val != nil) {
+                    _fullLink = (NSString *)val;
+                }
             }
+            if (_fullLink == nil) {
+                //FullLink
+                val = [item valueForKey:@"id"];
+                if (val != nil) {
+                    _fullLink = (NSString *)val;
+                }
+            }
+            
+            if (_commentsURL == nil) {
+                val = [item valueForKey:@"comments"];
+                if (val != nil) {
+                    _commentsURL = (NSString *)val;
+                }
+            }
+
+            val = [item valueForKey:@"link"];
 
             //Image
             imageURL = [self getImageURLFromItem:item andKey:@"link"];
+
+            if (imageURL == nil) {
+                imageURL = [self getImageURLFromItem:item andKey:@"media:thumbnail"];
+            }
 
             //If no image found, try to find any image from item content / description
             if (imageURL == nil) {
