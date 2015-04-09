@@ -1,3 +1,4 @@
+#import <Foundation/Foundation.h>
 @interface NSDate (TimeAgo)
 - (NSString *) timeAgo;
 - (NSString *) timeAgoWithLimit:(NSTimeInterval)limit;

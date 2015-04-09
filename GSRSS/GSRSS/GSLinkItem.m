@@ -53,4 +53,8 @@
     return nil;
 }
 
+- (int) linkType{
+    return (int)_type;
+}
+
 @end

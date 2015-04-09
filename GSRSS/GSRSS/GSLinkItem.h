@@ -14,5 +14,6 @@ typedef enum {ltImage, ltOther, ltComments, ltTerm} LinkType;
 @property(nonatomic, readonly) LinkType type;
 - (NSArray *)properties;
 - (id) valueForKey:(NSString *)key;
+- (int) linkType;
 
 @end
