@@ -59,7 +59,7 @@
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://ksipnistere.blogspot.gr/rss.xml"] delegate:self];//WP Blog
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://www.iokh.gr/rss.xml"] delegate:self];
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://tro-ma-ktiko.blogspot.gr/rss.xml"] delegate:self];
-//    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://olympia.gr/feed/"] delegate:self];
+    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://olympia.gr/feed/"] delegate:self];
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://www.antinews.gr/feed/"] delegate:self];
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://popaganda.gr/feed/"] delegate:self];
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://www.newsit.gr/rss/artrss.php"] delegate:self];

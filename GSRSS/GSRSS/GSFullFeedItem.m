@@ -15,8 +15,11 @@
 - (id) initWithFeedItem:(GSFeedItem *)item{
     if (self = [super initWithFeedItem:item]) {
         id val = nil;
+        val = [item valueForKey:@"content:encoded"];
+        if (val == nil) {
+            val = [item valueForKey:@"description"];
+        }
         //Description
-        val = [item valueForKey:@"description"];
         if (val == nil) {
             val = [item valueForKey:@"atom:summary"];
         }
