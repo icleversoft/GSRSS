@@ -17,5 +17,6 @@
 @property (nonatomic, strong) NSString *timeAgo;
 @property (nonatomic, strong) NSString *fullLink;
 @property (nonatomic, strong) NSString *commentsURL;
+@property (nonatomic, strong) NSMutableArray *categories;
 @property (nonatomic, strong) NSDate *date;
 @end

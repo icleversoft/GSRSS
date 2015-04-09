@@ -22,8 +22,10 @@
             _type = ltImage;
         }else if ([[_attributes allKeys] containsObject:@"medium"] && [[_attributes objectForKey:@"medium"] hasPrefix:@"image"]){
             _type = ltImage;
-        }else if ([[_attributes allKeys] containsObject:@"replies"]){
+        }else if ([[_attributes allKeys] containsObject:@"rel"] && [[_attributes allValues] containsObject:@"replies"]){
             _type = ltComments;
+        }else if ([[_attributes allKeys] containsObject:@"term"]){
+            _type = ltTerm;
         }
         if ( _type != ltImage) {
             if ([[_attributes allKeys] containsObject:@"url"]) {

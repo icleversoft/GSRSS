@@ -23,7 +23,7 @@
  
 @implementation GSBriefFeedItem
 @synthesize image = _image, title = _title, description = _description, author = _author, timeAgo = _timeAgo;
-@synthesize fullLink = _fullLink, date = _date, commentsURL = _commentsURL;
+@synthesize fullLink = _fullLink, date = _date, commentsURL = _commentsURL, categories = _categories;
 
 - (id) initWithFeedItem:(GSFeedItem *)item{
     if (self = [super init]) {
@@ -32,7 +32,7 @@
         _author = @"";
         _image = @"";
         _title = [[item valueForKey:@"title"] stringByConvertingHTMLToPlainText];
-        
+        _categories = [[NSMutableArray alloc] init];
         id val = nil;
         NSString *imageURL = nil;
         if (item.type == ftRSS) {
@@ -134,8 +134,44 @@
                     _commentsURL = (NSString *)val;
                 }
             }
-
-            val = [item valueForKey:@"link"];
+            
+            if (_commentsURL == nil) {
+                val = [item valueForKey:@"link"];
+                if (val != nil && [val isKindOfClass:[NSArray class]]) {
+                    NSArray *arr = (NSArray *)val;
+                    for (id li in arr) {
+                        if ([li isKindOfClass:[GSLinkItem class]]) {
+                            GSLinkItem *lit = (GSLinkItem *)li;
+                            if (lit.type == ltComments) {
+                                NSString *type = [lit valueForKey:@"type"];
+                                NSString *href = [lit valueForKey:@"href"];
+//                                NSLog(@"TYPE:%@  - HREF:%@", type, href);
+                                if (type != nil && /*[type isEqualToString:@"application/atom+xml"]*/[type isEqualToString:@"text/html"]) {
+                                    if (href != nil) {
+                                        _commentsURL = href;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            val = [item valueForKey:@"category"];
+            if (val != nil && [val isKindOfClass:[NSArray class]]) {
+                NSArray *arr = (NSArray *)val;
+                for (id li in arr) {
+                    if ([li isKindOfClass:[GSLinkItem class]]) {
+                        GSLinkItem *lit = (GSLinkItem *)li;
+                        if (lit.type == ltTerm) {
+                            NSString *term = [lit valueForKey:@"term"];
+                            if (term != nil) {
+                                [_categories addObject: term];
+                            }
+                        }
+                    }
+                }
+            }
 
             //Image
             imageURL = [self getImageURLFromItem:item andKey:@"link"];
