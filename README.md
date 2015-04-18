@@ -1,4 +1,4 @@
 GSRSS
 =====
 
-Simple IOS RSS Reader
+Simple IOS RSS Reader in Objective-C
