@@ -19,8 +19,8 @@
  #define ATOM_ITEM_KEYS  @[@"title", @"*link@href", @"published", @"updated", @"id", \
  @"author|name", @"content", @"summary", @"*category@term", \
  @"*media:thumbnail@url", @"author|email"]
-*/
- 
+ */
+
 @implementation GSBriefFeedItem
 @synthesize image = _image, title = _title, description = _description, author = _author, timeAgo = _timeAgo;
 @synthesize fullLink = _fullLink, date = _date, commentsURL = _commentsURL, categories = _categories;
@@ -44,7 +44,7 @@
                     _timeAgo = [_date timeAgo];
                 }
             }
-
+            
             //Description
             val = [item valueForKey:@"description"];
             if (val == nil) {
@@ -60,7 +60,11 @@
                 val = [item valueForKey:@"author"];
             }
             if (val != nil) {
-                _author = (NSString *)val;
+                if ([val isKindOfClass:[NSString class]]) {
+                    _author = (NSString *)val;
+                }else{
+                    _author = [(NSArray *)val objectAtIndex:0];
+                }
             }
             
             //CommentsURL
@@ -68,17 +72,17 @@
             if (val != nil) {
                 _commentsURL = (NSString *)val;
             }
-
+            
             //FullLink
             val = [item valueForKey:@"link"];
             if (val != nil) {
                 _fullLink = (NSString *)val;
             }
-
+            
             
             //Image
             imageURL = [self getImageURLFromItem:item andKey:@"media:content"];
-
+            
             if (imageURL == nil) {
                 imageURL = [self getImageURLFromItem:item andKey:@"media:thumbnail"];
             }
@@ -86,7 +90,7 @@
             if (imageURL == nil) {
                 imageURL = [self getImageURLFromDescriptionOrItem:item andKeys:@[@"description", @"content:encoded"]];
             }
-
+            
         }else{
             //Published Date
             val = [item valueForKey:@"updated"];
@@ -115,7 +119,7 @@
                 }else{
                     _author = [(NSArray *)val objectAtIndex:0];
                 }
-//                _author = (NSString *)val;
+                //                _author = (NSString *)val;
             }
             
             //Link
@@ -150,7 +154,7 @@
                             if (lit.type == ltComments) {
                                 NSString *type = [lit valueForKey:@"type"];
                                 NSString *href = [lit valueForKey:@"href"];
-//                                NSLog(@"TYPE:%@  - HREF:%@", type, href);
+                                //                                NSLog(@"TYPE:%@  - HREF:%@", type, href);
                                 if (type != nil && /*[type isEqualToString:@"application/atom+xml"]*/[type isEqualToString:@"text/html"]) {
                                     if (href != nil) {
                                         _commentsURL = href;
@@ -177,14 +181,14 @@
                     }
                 }
             }
-
+            
             //Image
             imageURL = [self getImageURLFromItem:item andKey:@"link"];
-
+            
             if (imageURL == nil) {
                 imageURL = [self getImageURLFromItem:item andKey:@"media:thumbnail"];
             }
-
+            
             //If no image found, try to find any image from item content / description
             if (imageURL == nil) {
                 imageURL = [self getImageURLFromDescriptionOrItem:item andKeys:@[@"summary", @"content"]];
@@ -227,7 +231,7 @@
         TFHppleElement *elm = [elements objectAtIndex:0];
         imageURL = [elm objectForKey:@"src"];
     }
-
+    
     return imageURL;
 }
 - (NSString *) getImageURLFromItem:(GSFeedItem *)item andKey:(NSString *)key{
