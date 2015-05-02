@@ -196,9 +196,9 @@
         }
         _image = imageURL;
         _description = [_description stringByConvertingHTMLToPlainText];
-        if ([_description length] > 150) {
-            _description = [NSString stringWithFormat:@"%@...", [_description substringToIndex:149]];
-        }
+//        if ([_description length] > 150) {
+//            _description = [NSString stringWithFormat:@"%@...", [_description substringToIndex:149]];
+//        }
     }
     return self;
 }

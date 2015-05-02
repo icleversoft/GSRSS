@@ -80,17 +80,12 @@
 - (void) parser:(GSRSSParser *)parser parsedFeedItem:(GSFeedItem *)item{
     GSFullFeedItem *fi = [[GSFullFeedItem alloc] initWithFeedItem:item];
     NSLog(@"----------------------------");
-    NSLog(@"Title.......:%@", fi.title);
-    NSLog(@"Image.......:%@", fi.image == nil ? @"-" : fi.image);
-    NSLog(@"Link........:%@", fi.fullLink);
-    NSLog(@"Time Ago....:%@", fi.timeAgo);
-    if ([fi.author isKindOfClass:[NSString class]]) {
-        NSLog(@"Authors.....:%@", fi.author);
-    }else{
-        NSArray *arr = (NSArray *)fi.author;
-        NSLog(@"Authors.....:%@", [arr componentsJoinedByString:@" / "]);
-    }
-    NSLog(@"Comments....:%@", fi.commentsURL == nil ? @"-" : fi.commentsURL);
+//    NSLog(@"Title.......:%@", fi.title);
+//    NSLog(@"Image.......:%@", fi.image == nil ? @"-" : fi.image);
+//    NSLog(@"Link........:%@", fi.fullLink);
+//    NSLog(@"Time Ago....:%@", fi.timeAgo);
+//    NSLog(@"Authors.....:%@", fi.author);
+//    NSLog(@"Comments....:%@", fi.commentsURL == nil ? @"-" : fi.commentsURL);
     NSLog(@"Description.:%@", fi.description);
     [_items addObject:fi];
 }
