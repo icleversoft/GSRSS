@@ -35,7 +35,8 @@
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://resaltomag.blogspot.gr/rss.xml"] delegate:self];
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://feeds.feedburner.com/assoscoupa"] delegate:self];//WP Blog
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://www.newsit.gr/rss/artrss.php"] delegate:self];//WP Blog
-    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://ksipnistere.blogspot.gr/rss.xml"] delegate:self];//WP Blog
+//    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://ksipnistere.blogspot.gr/rss.xml"] delegate:self];//WP Blog
+    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://feeds.feedburner.com/gataros/xcQy"] delegate:self];//WP Blog
     
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://www.enikos.gr/feeds/content_latest.xml"] delegate:self];//WP Blog
 //    _parser = [[GSRSSParser alloc] initWithURL:[NSURL URLWithString:@"http://www.zougla.gr/rss/ola"] delegate:self];//WP Blog

@@ -110,7 +110,12 @@
             //Author
             val = [item valueForKey:@"author"];
             if (val != nil) {
-                _author = (NSString *)val;
+                if ([val isKindOfClass:[NSString class]]) {
+                    _author = (NSString *)val;
+                }else{
+                    _author = [(NSArray *)val objectAtIndex:0];
+                }
+//                _author = (NSString *)val;
             }
             
             //Link
